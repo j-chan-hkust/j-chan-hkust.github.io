@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "_posts/2024-10-04-az104-review.md",
+                "file": "_drafts/2024-10-07-so-youve-lost-your-phone.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "_posts/2024-10-04-az104-review.md",
+                "file": "_drafts/2024-10-07-so-youve-lost-your-phone.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "_posts/2024-10-04-az104-review.md",
+                "file": "_drafts/2024-10-07-so-youve-lost-your-phone.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "_posts/2024-10-04-az104-review.md"
+                "file": "_drafts/2024-10-07-so-youve-lost-your-phone.md"
               }
             }
           }
@@ -148,13 +148,15 @@
   },
   "active": "4b0b34c711e02c28",
   "lastOpenFiles": [
-    "_posts/2010-03-07-post-link.md",
-    "_posts/2010-02-05-post-quote.md",
-    "_posts/2010-01-08-post-chat.md",
-    "_posts/2024-10-04-az104-review.md",
-    "_posts/2010-01-07-post-modified.md",
-    "_posts/2010-01-07-post-standard.md",
-    "_posts/2010-02-05-post-notice.md",
+    "_drafts/2024-10-04-az104-review.md",
+    "_drafts/2010-02-05-post-notice.md",
+    "_drafts/2010-02-05-post-quote.md",
+    "_drafts/2010-03-07-post-link.md",
+    "_drafts/2024-10-07-so-youve-lost-your-phone.md",
+    "_drafts/2010-01-07-post-modified.md",
+    "_drafts/2010-01-07-post-standard.md",
+    "_drafts",
+    "_drafts/2010-01-08-post-chat.md",
     "_pages/stuff-i-like.md",
     "_pages/about.md",
     "README.md"
