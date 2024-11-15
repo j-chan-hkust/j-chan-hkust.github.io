@@ -4,30 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "98aa48ab2b03296f",
+        "id": "32cb779a389eed06",
         "type": "tabs",
         "children": [
           {
-            "id": "4b0b34c711e02c28",
+            "id": "582c2776f4f28099",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "_drafts/2024-10-04-az104-review.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "2024-10-04-az104-review"
-            }
-          },
-          {
-            "id": "b9d8785fccc93b62",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "_pages/2024-11-15-az104-review.md",
+                "file": "_posts/2024-11-15-az104-review.md",
                 "mode": "source",
                 "source": false
               },
@@ -35,8 +21,7 @@
               "title": "2024-11-15-az104-review"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -67,7 +52,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "how to pass a az-",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -173,11 +158,13 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "b9d8785fccc93b62",
+  "active": "ec1ce7eb61c4db28",
   "lastOpenFiles": [
-    "Pasted image 20241115102213.png",
+    "_site/blog/az104-review/index.html",
+    "_site/blog/az104-review",
+    "_posts/2024-11-15-az104-review.md",
+    "_data/Pasted image 20241115102213.png",
     "_drafts/2024-10-07-so-youve-lost-your-phone.md",
-    "_pages/2024-11-15-az104-review.md",
     "_posts",
     "_drafts/2010-02-05-post-notice.md",
     "_drafts/2010-02-05-post-quote.md",
