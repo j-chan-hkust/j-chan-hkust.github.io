@@ -1,0 +1,9 @@
+1. [[Terraform Block]]
+2. [[Provider Block]]
+3. [[Data Blocks]]
+4. [[Resource Block]]
+5. [[Module Block]]
+6. [[Import Block]]
+7. Variable Block
+8. [[Output Block]]
+9. [[Locals Block]]

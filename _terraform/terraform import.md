@@ -1,0 +1,1 @@
+The `terraform import` command is used to import existing infrastructure into Terraform.

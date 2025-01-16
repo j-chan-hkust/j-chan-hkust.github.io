@@ -1,0 +1,1 @@
+The `terraform get` command is used to download modules from the module registry or a version control system, making them available for use in the configuration.
