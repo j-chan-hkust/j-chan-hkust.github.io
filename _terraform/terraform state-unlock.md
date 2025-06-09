@@ -1,1 +1,0 @@
-The `terraform force-unlock` command is used to manually unlock a Terraform state file that remains locked due to an interrupted operation or failed unlock process.

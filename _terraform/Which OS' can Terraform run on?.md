@@ -1,1 +1,0 @@
-macOS, FreeBSD, OpenBSD, Linux, Solaris, and Windows

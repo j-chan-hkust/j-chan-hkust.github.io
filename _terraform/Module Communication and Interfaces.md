@@ -1,1 +1,0 @@
-Modules are able to expose certain variables to other modules using an [[Output Block]]. This block allows other interfaces to view certain variables.

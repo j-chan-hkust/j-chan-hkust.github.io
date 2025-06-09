@@ -1,3 +1,0 @@
-HashiCorp Vault is a **security tool** that provides centralized secrets management and identity-based security. It allows organizations to securely store, manage, and control access to sensitive data like **API keys, passwords, certificates, and database credentials**
-
-Critically - by using the official [[Providers]] for Vault, you can follow the "happy path" of managing your organization secrets, as suggested by Hashicorp.

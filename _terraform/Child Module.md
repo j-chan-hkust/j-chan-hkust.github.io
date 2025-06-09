@@ -1,1 +1,0 @@
-A child module is a module that has been called or referenced by another module (typically the root module or another parent module) within a Terraform configuration.

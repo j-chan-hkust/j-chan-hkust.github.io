@@ -1,7 +1,0 @@
-The `terraform state` command is used for **advanced state management** in Terraform, and works by directly interacting with your [[Terraform Statefiles]]. It's primarily used for **advanced troubleshooting scenarios** and specific use cases like moving resources between different Terraform configurations or fixing state misalignment, so usually you'd want to steer clear of needing to use this often. If this is a regular part of your workflow, somethings gone wrong!
-
-Some common functions (pasted):
-1. Inspecting the Terraform state: The `**terraform state show**` subcommand can be used to display the current state of a Terraform configuration. This can be useful for verifying the current state of resources managed by Terraform.
-2. Updating the Terraform state: The `**terraform state mv**` and `**terraform state rm**` subcommands can be used to swap pointers to resources (i.e. move) and remove resources from being tracked by the Terraform state, respectively.
-3. Pulling and pushing the Terraform state: The `**terraform state pull**` and `**terraform state push**` subcommands can be used to retrieve and upload the Terraform state from and to a remote backend, respectively. This is useful when multiple users or systems are working with the same Terraform configuration.
-4. Importing resources into Terraform: The `**terraform state import**` subcommand can be used to import existing resources into the Terraform state. This allows Terraform to manage resources that were created outside of Terraform.
