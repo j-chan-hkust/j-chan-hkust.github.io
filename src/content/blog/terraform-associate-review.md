@@ -2,7 +2,6 @@
 title: How to pass the Terraform Associate Exam
 description: a
 pubDate: Jan 14 2025
-heroImage: ../../assets/blog-placeholder-3.jpg
 tags:
   - cloud
 ---

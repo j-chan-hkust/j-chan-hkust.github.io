@@ -1,11 +1,11 @@
 ---
-title: "AZ-104 Review: Azure Administrator Associate"
+title: What is
 description: a
 pubDate: Nov 15 2024
 tags:
   - cloud
 ---
-
+http://localhost:4321/
 # In short:
 - Only Ravikiran Srinivasulu's [AZ-104 Practice Tests](https://www.udemy.com/course/az-104-microsoft-azure-administrator-practice-test-questions/?couponCode=24T2MT111524) are really worth your time. Everything else just does not go into the right level of detail to actually pass the exam. Bonus points for high quality text based, and video based (though I didn't watch them) explanations.
 - The exam has a bunch of weird behaviors that can cause you to lose points:
