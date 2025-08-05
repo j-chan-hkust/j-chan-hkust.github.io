@@ -158,3 +158,20 @@ hr {
 	/* added line to stop words getting smushed together (as they go onto separate lines and some screen readers do not understand line feeds as a space */
 	white-space: nowrap;
 }
+
+/* Footnote styling for square brackets*/
+sup a {
+	vertical-align: baseline;
+	position: relative;
+	top: -0.2em;
+	font-size: 0.75em;
+	line-height: 0;
+}
+
+sup a::before {
+	content: "[";
+}
+
+sup a::after {
+	content: "]";
+}
