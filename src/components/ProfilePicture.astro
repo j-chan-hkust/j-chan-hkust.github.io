@@ -1,14 +1,20 @@
 ---
 const images = [
-  { src: '/cartoon_profile.jpeg', weight: 0.95 },
-  { src: '/corpo-photo3.jpg', weight: 0.05 }
+  { src: '/cartoon_profile.jpeg', weight: 0.7 },
+  { src: '/corpo-photo3.jpg', weight: 0.2 },
+  { src: '/this-is-fine.jpg', weight: 0.1}
 ];
 
 const random = Math.random();
 let selectedImage = images[0].src;
+let cumulativeWeight = 0;
 
-if (random > images[0].weight) {
-  selectedImage = images[1].src;
+for (const image of images) {
+  cumulativeWeight += image.weight;
+  if (random <= cumulativeWeight) {
+    selectedImage = image.src;
+    break;
+  }
 }
 ---
 
