@@ -28,3 +28,4 @@ src/content/drafts/
 
 # obsidian
 .obsidian/
+.DS_Store
