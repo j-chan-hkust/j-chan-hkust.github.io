@@ -5,20 +5,27 @@ import { SITE_TITLE } from '../consts';
 ---
 
 <header>
-	<nav>
-		<h2><a href="/"><ProfilePicture />{SITE_TITLE}</a></h2>
-		<div class="internal-links">
-			<HeaderLink href="/">Home</HeaderLink>
-			<HeaderLink href="/blog">Blog</HeaderLink>
-		</div>
-	</nav>
+	<div class="container">
+		<nav>
+			<h2><a href="/"><ProfilePicture />{SITE_TITLE}</a></h2>
+			<div class="internal-links">
+				<HeaderLink href="/">Home</HeaderLink>
+				<HeaderLink href="/blog">Blog</HeaderLink>
+			</div>
+		</nav>
+	</div>
 </header>
 <style>
 	header {
 		margin: 0;
-		padding: 0 1em;
+		padding: 0;
 		background: white;
 		box-shadow: 0 2px 8px rgba(var(--black), 5%);
+	}
+	.container {
+		max-width: 1000px;
+		margin: 0 auto;
+		padding: 0 1em;
 	}
 	h2 {
 		margin: 0;
