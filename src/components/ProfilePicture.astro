@@ -1,0 +1,33 @@
+---
+const images = [
+  { src: '/pixel_profile.png', weight: 0.95 },
+  { src: '/corpo-photo3.jpg', weight: 0.05 }
+];
+
+const random = Math.random();
+let selectedImage = images[0].src;
+
+if (random > images[0].weight) {
+  selectedImage = images[1].src;
+}
+---
+
+<img src={selectedImage} alt="Profile" class="profile-picture" />
+
+<style>
+  .profile-picture {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 0.5em;
+  }
+  
+  @media (max-width: 720px) {
+    .profile-picture {
+      width: 36px;
+      height: 36px;
+      margin-right: 0.4em;
+    }
+  }
+</style>
