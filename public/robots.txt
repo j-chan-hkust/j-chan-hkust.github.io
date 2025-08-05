@@ -1,0 +1,19 @@
+User-agent: *
+Allow: /
+
+# Allow crawling of all public content
+Allow: /blog/
+Allow: /blog/*
+
+# Block access to drafts and development files
+Disallow: /drafts/
+Disallow: /_astro/
+Disallow: /src/
+
+# Common bot restrictions
+Disallow: /fonts/
+Disallow: /*.woff
+Disallow: /*.woff2
+
+# Sitemap reference (for future implementation)
+# Sitemap: https://www.jung-chan.com/sitemap.xml
