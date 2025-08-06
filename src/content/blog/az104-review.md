@@ -9,7 +9,7 @@ tags:
 # In short:
 - Only Ravikiran Srinivasulu's [AZ-104 Practice Tests](https://www.udemy.com/course/az-104-microsoft-azure-administrator-practice-test-questions/?couponCode=24T2MT111524) are really worth your time. Everything else just does not go into the right level of detail to actually pass the exam. Bonus points for high quality text based, and video based (though I didn't watch them) explanations.
 - The exam has a bunch of weird behaviors that can cause you to lose points:
-	- While the majority of questions give you the option to "review for later", the "repeated scenario" questions[^4]do not allow you to review. Answer these carefully
+	- While the majority of questions give you the option to "review for later", the "repeated scenario" questions[^4] do not allow you to review. Answer these carefully
 	- The exam is in 2 parts: a main part, which will likely take you 75-90% of your 120 minutes to complete, and a "case" based series of 5 questions, which will take you roughly 5-10minutes to complete. Critically, you must lock in your answers to part 1 before you can start part 2. Plan your time accordingly.
 - I found the exam pretty difficult, and I ended up learning a lot about the fundamentals of networking, in addition to Azure features and constructs.
 
@@ -76,6 +76,8 @@ The exam itself has a lot of weird quirks. The "repeated scenario" question does
 I would suggest leaving yourself roughly 10 minutes to work on the last section. It can safely be completed under 5 minutes, but I don't think you want to subject yourself to the spiritual danger of dashing through 5 questions that rely on careful review of multiple pages of context.
 # Closing words
 While I definitely got a little lucky passing it first time - I stand by the study method. I only ended up having the time to review 70% of Ravikiran's content in the 2 weeks - not to mention a repeat review which would have helped me a lot. Another week and it probably would have been a much more secure pass.
+
+<hr>
 
 [^1]: Also see: [Procrastination](https://waitbutwhy.com/2015/03/procrastination-matrix.html)
 [^2]: This time I wrote a quick GPT bot that took study material, converted it into a anki cards, and tried studying it that way. While it was a fun mini project, I very quickly realized the bot wasn't really capable of differentiating between exam relevant facts, and I wasn't getting better at passing the exam.
