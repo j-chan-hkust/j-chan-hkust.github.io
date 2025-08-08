@@ -15,4 +15,18 @@ const blog = defineCollection({
 	}),
 });
 
-export const collections = { blog };
+const hidden = defineCollection({
+	// Load Markdown and MDX files in the `src/content/hidden/` directory.
+	loader: glob({ base: './src/content/hidden', pattern: '**/*.{md,mdx}' }),
+	// Type-check frontmatter using a schema (same as blog)
+	schema: ({ image }) => z.object({
+		title: z.string(),
+		description: z.string(),
+		// Transform string to Date object
+		pubDate: z.coerce.date(),
+		updatedDate: z.coerce.date().optional(),
+		heroImage: image().optional(),
+	}),
+});
+
+export const collections = { blog, hidden };
