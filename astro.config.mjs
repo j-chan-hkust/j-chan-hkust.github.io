@@ -6,20 +6,39 @@ import wikiLinkPlugin from 'remark-wiki-link';
 import fs from 'fs';
 import path from 'path';
 
-// Universal collection scanner - finds which collection contains a given slug
-async function findCollectionForSlug(slug) {
+// Synchronous filesystem-based collection scanner - finds which collection contains a given slug
+function findCollectionForSlug(slug) {
 	const collections = ['blog', 'hidden']; // Add more collections as they're defined
+	const contentDir = './src/content';
 	
 	for (const collectionName of collections) {
 		try {
-			const entries = await getCollection(collectionName);
-			const found = entries.find(entry => entry.slug === slug);
+			const collectionPath = path.join(contentDir, collectionName);
+			
+			// Check if collection directory exists
+			if (!fs.existsSync(collectionPath)) {
+				continue;
+			}
+			
+			// Read all files in the collection directory
+			const files = fs.readdirSync(collectionPath, { withFileTypes: true });
+			
+			// Look for matching slug (check both .md and .mdx extensions)
+			const found = files.some(file => {
+				if (file.isFile()) {
+					const fileName = file.name;
+					const fileSlug = fileName.replace(/\.(md|mdx)$/, '');
+					return fileSlug === slug;
+				}
+				return false;
+			});
+			
 			if (found) {
 				return collectionName;
 			}
 		} catch (error) {
-			// Collection might not exist, continue to next one
-			console.warn(`Collection ${collectionName} not found:`, error.message);
+			// Collection might not exist or be readable, continue to next one
+			console.warn(`Collection ${collectionName} scan failed:`, error.message);
 		}
 	}
 	
@@ -38,8 +57,8 @@ export default defineConfig({
 					const slug = name.replace(/ /g, '-').toLowerCase();
 					return [slug];
 				},
-				hrefTemplate: async (permalink) => {
-					const collection = await findCollectionForSlug(permalink);
+				hrefTemplate: (permalink) => {
+					const collection = findCollectionForSlug(permalink);
 					return `/${collection}/${permalink}`;
 				},
 				aliasDivider: '|'
