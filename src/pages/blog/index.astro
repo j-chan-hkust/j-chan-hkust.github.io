@@ -48,7 +48,6 @@ const posts = (await getCollection('blog')).sort(
 	<body>
 		<Header />
 		<main>
-			<h1>Blog</h1>
 			<ul class="post-list">
 				{
 					posts.map((post, index) => (
