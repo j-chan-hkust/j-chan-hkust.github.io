@@ -1,6 +1,6 @@
 ---
 title: How to pass the Terraform Associate Exam
-description: a
+description: How to pass the Terraform Associate Exam
 pubDate: Jan 14 2025
 tags:
   - cloud

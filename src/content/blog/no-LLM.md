@@ -1,6 +1,6 @@
 ---
 title: Why this blog isn't written using an LLM
-description: A guarantee
+description: A Guarantee
 pubDate: Aug 6 2025
 tags:
   - AI

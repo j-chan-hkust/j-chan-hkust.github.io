@@ -1,0 +1,6 @@
+- Always use conventional git commits
+- Reference README.md for overview of the project
+- When working on UI components, always use puppeteer MCP with both Mobile and Desktop aspect ratios to ensure a feature is working as intended
+- When taking screenshots via Puppeteer MCP, always capture both mobile and desktop dimensions:
+  - Mobile: 390x844 (modern iPhone dimensions)
+  - Desktop: 1920x1080 (Full HD standard)

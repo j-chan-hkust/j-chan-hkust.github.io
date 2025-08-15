@@ -1,6 +1,6 @@
 ---
 title: "AZ-104 Review: Azure Administrator Associate"
-description: a
+description: How to pass the AZ-104 exam
 pubDate: Nov 15 2024
 tags:
   - cloud
@@ -51,7 +51,7 @@ Over my study experience, I went through the following resources:
 	- This is the only course that's worth your time.
 	- The questions are *really* hard, super detail oriented, and honestly feel like he's taking the piss on you. He's really not - while the exam doesn't go into quite the level of anal detail around precisely how Azure works, it's like 90% there.
 	- Don't get too discouraged by the score you get - as long as you're reviewing your mistakes, you are making progress. I was getting a good solid 40% on both exams.
-	![[Pasted image 20241115102213.png]]
+	  ![AZ-104 test results](../../assets/az-104-test.png)
 	- He also very closely emulates the question structure of the exam - more on that later.
 	- Unfortunately he has decided to chunk his exam into 3 hour 84 question *slogs*, which you need to complete before you can review your answers. It's a small price to pay for what you get though.
 - Microsoft's Practice Exam 
