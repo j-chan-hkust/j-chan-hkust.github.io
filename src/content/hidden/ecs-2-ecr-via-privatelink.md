@@ -9,7 +9,9 @@ tags:
 
 ### It can't be that hard can it?
 Let's say you're configuring your infrastructure in terraform, and you have the basic infrastructure worked out:
+
 ![example infrastructure](../../assets/basic-application-dev-infrastructure.drawio.png)
+
 You've already done with the terraform code that creates all the components, now all that's left is setting up the security groups that connects them all together!
 
 Now, you just need to connect all your components together. You remember what you learned in your AWS architecture certification, and connect each of the components together with a series of security groups. You even try and be clever by routing things through a VPC endpoint[^3], just as your certification told you to do. Everything is ready:
@@ -102,6 +104,7 @@ CannotPullContainerError: The task cannot pull XXXXXXXXXX.dkr.ecr.ap-southeast-1
 ```
 
 **Wait, so what is actually happening?**
+
 Your ECS task needs to pull your container from ECR, so obviously it needs to be able to talk to ECR. To do this, you set up a VPC endpoint, which gives you a route to ECR. However, the backend for ECR is actually s3, meaning each layer is actually an s3 object. This also means anything that your task also needs to access s3, which means it needs a way to be able to call the s3 service. 
 
 Because s3 endpoints are enabled using gateways, which is essentially your VPC updating its own route tables to allow traffic through to the AWS network, they're not really something you can associate a security group with. Hence the right way to allow your instance to connect to s3 is by allowing the prefix list, which is really just shorthand for the list of IP addresses AWS uses for the s3 service.
