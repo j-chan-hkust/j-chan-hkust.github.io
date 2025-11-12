@@ -9,8 +9,7 @@ tags:
 
 ### It can't be that hard can it?
 Let's say you're configuring your infrastructure in terraform, and you have the basic infrastructure worked out:
-
-![[basic-application-dev-infrastructure.drawio.png]]
+![example infrastructure](../../assets/basic-application-dev-infrastructure.drawio.png)
 You've already done with the terraform code that creates all the components, now all that's left is setting up the security groups that connects them all together!
 
 Now, you just need to connect all your components together. You remember what you learned in your AWS architecture certification, and connect each of the components together with a series of security groups. You even try and be clever by routing things through a VPC endpoint[^3], just as your certification told you to do. Everything is ready:
@@ -24,7 +23,7 @@ Now, you just need to connect all your components together. You remember what yo
 - You've configured the security groups to connect your ECS task to your VPC endpoints
 
 But your tasks get stuck on pending, and at the end of it you get the error:
-![[Pasted image 20251112194835.png]]
+![error messafge](../../assets/error-message.png)
 
 Hm.
 ### What it probably is[^2]
