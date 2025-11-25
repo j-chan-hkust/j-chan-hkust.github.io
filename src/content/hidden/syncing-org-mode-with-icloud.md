@@ -1,8 +1,9 @@
 ---
 title: Configuring Emacs Org Mode to Work Better with iCloud Sync
 description: How to stop losing your todos when using icloud sync with org mode by turning on autosave and autoload
-pubDate: Aug 29 2025
+pubDate: Nov 25 2025
 tags:
+  - org-mode
 ---
 The end is nigh. I have started fiddling around with org mode. Pray for me.
 
