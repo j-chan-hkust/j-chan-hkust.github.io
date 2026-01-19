@@ -67,7 +67,7 @@ resource "aws_security_group" "ecs_tasks" {
 ```
 
 After this is done, your ECS task will be able to access ECR via interface endpoint, and then access the layers of your container in s3 via the gateway endpoint.
-### Why it is kinda hard[^4]
+### Why its hard[^4]
 Unfortunately for me and my Thursday afternoon plans, this very specific detail is not well documented by AWS, or explained by the various error messages and debugging tools provided by AWS.
 
 Most information online concerning the error will be focused on the stuff you've already gotten right – i.e. permission sets, security groups, etc. – or will be talking about setting this up with a NAT Gateway – which is pretty straightforward to do.
