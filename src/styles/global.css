@@ -254,7 +254,7 @@ main:focus {
   transition: background-size 125ms;
 }
 .post-title:hover,.post-title:focus-visible {
-  background-size: 100% 65%;
+  background-size: 100% 92%;
 }
 .post-description {
   font-size: 13px;
@@ -400,7 +400,7 @@ main:focus {
   transition: background-size 125ms;
 }
 .prose a:not([data-footnote-ref]):not([data-footnote-backref]):hover,.prose a:not([data-footnote-ref]):not([data-footnote-backref]):focus-visible {
-  background-size: 100% 65%;
+  background-size: 100% 100%;
 }
 .prose img {
   display: block;
