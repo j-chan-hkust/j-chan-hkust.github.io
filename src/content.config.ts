@@ -8,6 +8,7 @@ const blog = defineCollection({
 	schema: ({ image }) => z.object({
 		title: z.string(),
 		description: z.string(),
+		tags: z.array(z.string()).default([]),
 		// Transform string to Date object
 		pubDate: z.coerce.date(),
 		updatedDate: z.coerce.date().optional(),
@@ -22,6 +23,7 @@ const hidden = defineCollection({
 	schema: ({ image }) => z.object({
 		title: z.string(),
 		description: z.string(),
+		tags: z.array(z.string()).default([]),
 		// Transform string to Date object
 		pubDate: z.coerce.date(),
 		updatedDate: z.coerce.date().optional(),
@@ -29,4 +31,10 @@ const hidden = defineCollection({
 	}),
 });
 
-export const collections = { blog, hidden };
+// Drafts are deliberately never loaded or routed.
+const pages = defineCollection({
+	loader: glob({ base: './src/content/pages', pattern: '*.md' }),
+	schema: z.object({ title: z.string(), description: z.string() }),
+});
+
+export const collections = { blog, hidden, pages };

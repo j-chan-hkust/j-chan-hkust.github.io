@@ -1,0 +1,37 @@
+---
+import Site from '../layouts/Site.astro';
+import { getPosts, tagsFor, tagKey, tagSlug, dateLabel } from '../lib/posts';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+interface Props { selectedTag?: string }
+const { selectedTag } = Astro.props;
+const posts = await getPosts();
+const tags = tagsFor(posts);
+const selectedLabel = tags.find(tag => tag.key === selectedTag)?.label;
+const filtered = selectedTag ? posts.filter(post => post.data.tags.some(tag => tagKey(tag) === selectedTag)) : posts;
+---
+<Site title={selectedLabel ? `${selectedLabel} — Writing` : SITE_TITLE} description={selectedLabel ? `Posts about ${selectedLabel} by Jung Chan.` : SITE_DESCRIPTION}>
+  <section class="archive-heading" aria-labelledby="archive-title">
+    <p class="eyebrow">JUNG / PUBLIC LOG</p>
+    <div class="heading-line"><h1 id="archive-title">ls ./writing</h1><span class="archive-count" aria-label={`${posts.length} posts`}>{String(posts.length).padStart(2, '0')}<span>ENTRIES</span></span></div>
+    <div class="heading-foot"><span>Thoughts, experiments & things learned.</span>{posts.length > 0 && <span>{posts.at(-1)!.data.pubDate.getFullYear()} — {posts[0].data.pubDate.getFullYear()}</span>}</div>
+  </section>
+  <nav class="tag-filter" aria-label="Filter posts by tag">
+    <span class="filter-label">Browse by</span>
+    <a href="/" class:list={[{ selected: !selectedTag }]} aria-current={!selectedTag ? 'page' : undefined}>All posts <span>{posts.length}</span></a>
+    {tags.map(tag => <a href={`/tags/${tagSlug(tag.key)}/`} class:list={[{ selected: selectedTag === tag.key }]} aria-current={selectedTag === tag.key ? 'page' : undefined}>{tag.label}<span>{tag.count}</span></a>)}
+  </nav>
+  {selectedLabel && <div class="filter-summary"><p>{filtered.length} {filtered.length === 1 ? 'post' : 'posts'} filed under <strong>{selectedLabel}</strong></p><a href="/">Clear filter ×</a></div>}
+  <ol class="post-list">
+    {filtered.map((post, index) => <li class="post-row">
+      <span class="post-number" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
+      <div class="post-main">
+        <h2><a class="post-title" href={`/blog/${post.id}/`}>{post.data.title}</a></h2>
+        <p class="post-description">{post.data.description}</p>
+        <ul class="post-tags" aria-label="Post tags">{post.data.tags.map(tag => <li><a href={`/tags/${tagSlug(tag)}/`}>{tag}</a></li>)}</ul>
+      </div>
+      <time class="post-date" datetime={post.data.pubDate.toISOString()}><span>{dateLabel(post.data.pubDate).slice(0, 6)}</span><span>{post.data.pubDate.getFullYear()}</span></time>
+    </li>)}
+  </ol>
+  {filtered.length === 0 && <p class="empty-archive">No posts yet.</p>}
+  <div class="archive-end"><span aria-hidden="true">✳</span><span>That's everything, for now.</span></div>
+</Site>

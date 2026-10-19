@@ -1,0 +1,7 @@
+---
+import { getEntry, render } from 'astro:content';
+import ContentPage from '../layouts/ContentPage.astro';
+const entry = (await getEntry('pages', 'other-peoples-stuff'))!;
+const { Content } = await render(entry);
+---
+<ContentPage entry={entry}><Content /></ContentPage>

@@ -7,6 +7,7 @@ import fs from 'fs';
 import path from 'path';
 
 // Synchronous filesystem-based collection scanner - finds which collection contains a given slug
+/** @param {string} slug */
 function findCollectionForSlug(slug) {
 	const collections = ['blog', 'hidden']; // Add more collections as they're defined
 	const contentDir = './src/content';
@@ -38,7 +39,7 @@ function findCollectionForSlug(slug) {
 			}
 		} catch (error) {
 			// Collection might not exist or be readable, continue to next one
-			console.warn(`Collection ${collectionName} scan failed:`, error.message);
+			console.warn(`Collection ${collectionName} scan failed:`, error instanceof Error ? error.message : String(error));
 		}
 	}
 	
@@ -48,16 +49,21 @@ function findCollectionForSlug(slug) {
 
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://j-chan-hkust.github.io',
-	integrations: [mdx(), sitemap()],
+	site: 'https://www.jung-chan.com',
+	integrations: [mdx(), sitemap({ filter: (page) => {
+		const pathname = new URL(page).pathname;
+		return !pathname.startsWith('/hidden/') && !['/blog/', '/stuff-i-like/'].includes(pathname);
+	} })],
+	devToolbar: { enabled: false },
+	vite: { server: { watch: { ignored: ['**/artifacts/**', '**/.playwright-mcp/**'] } } },
 	markdown: {
 		remarkPlugins: [
 			[wikiLinkPlugin, {
-				pageResolver: (name) => {
+				pageResolver: (/** @type {string} */ name) => {
 					const slug = name.replace(/ /g, '-').toLowerCase();
 					return [slug];
 				},
-				hrefTemplate: (permalink) => {
+				hrefTemplate: (/** @type {string} */ permalink) => {
 					const collection = findCollectionForSlug(permalink);
 					return `/${collection}/${permalink}`;
 				},

@@ -1,59 +1,12 @@
 ---
-import HeaderLink from './HeaderLink.astro';
-import ProfilePicture from './ProfilePicture.astro';
-import { SITE_TITLE } from '../consts';
+import Icon from './Icon.astro';
+const pathname = Astro.url.pathname;
 ---
-
-<header>
-	<div class="container">
-		<nav>
-			<h2><a href="/"><ProfilePicture />{SITE_TITLE}</a></h2>
-			<div class="internal-links">
-				<HeaderLink href="/">Home</HeaderLink>
-				<HeaderLink href="/blog">Blog</HeaderLink>
-			</div>
-		</nav>
-	</div>
+<header class="site-header">
+  <a class="brand" href="/" aria-label="Jung Chan — all posts">Jung Chan</a>
+  <nav class="main-nav" aria-label="Main navigation">
+    <a class="writing-link" href="/" aria-current={pathname === '/' || pathname.startsWith('/tags/') ? 'page' : undefined}>Writing</a>
+    <a class="icon-link" href="/other-peoples-stuff/" aria-label="other people's stuff" title="other people's stuff" aria-current={pathname === '/other-peoples-stuff/' ? 'page' : undefined}><Icon name="heart" /></a>
+    <a class="icon-link" href="/about/" aria-label="About me" title="About me" aria-current={pathname === '/about/' ? 'page' : undefined}><Icon name="question" /></a>
+  </nav>
 </header>
-<style>
-	header {
-		margin: 0;
-		padding: 0;
-		background: white;
-		box-shadow: 0 2px 8px rgba(var(--black), 5%);
-	}
-	.container {
-		max-width: 1000px;
-		margin: 0 auto;
-		padding: 0 1em;
-	}
-	h2 {
-		margin: 0;
-		font-size: 1.5em;
-	}
-
-	h2 a,
-	h2 a.active {
-		text-decoration: none;
-		display: flex;
-		align-items: center;
-	}
-	nav {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-	}
-	nav a {
-		padding: 0.5em 0.5em;
-		color: var(--black);
-		border-bottom: 4px solid transparent;
-		text-decoration: none;
-	}
-	nav a.active {
-		text-decoration: none;
-		border-bottom-color: #548E9B;
-	}
-	.internal-links {
-		margin-left: auto;
-	}
-</style>
