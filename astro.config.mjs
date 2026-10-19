@@ -5,6 +5,7 @@ import sitemap from '@astrojs/sitemap';
 import wikiLinkPlugin from 'remark-wiki-link';
 import fs from 'fs';
 import path from 'path';
+import staticProjects from './scripts/static-projects.mjs';
 
 // Synchronous filesystem-based collection scanner - finds which collection contains a given slug
 /** @param {string} slug */
@@ -55,7 +56,10 @@ export default defineConfig({
 		return !pathname.startsWith('/hidden/') && !['/blog/', '/stuff-i-like/'].includes(pathname);
 	} })],
 	devToolbar: { enabled: false },
-	vite: { server: { watch: { ignored: ['**/artifacts/**', '**/.playwright-mcp/**'] } } },
+	vite: {
+		plugins: [staticProjects()],
+		server: { watch: { ignored: ['**/artifacts/**', '**/.playwright-mcp/**'] } },
+	},
 	markdown: {
 		remarkPlugins: [
 			[wikiLinkPlugin, {
