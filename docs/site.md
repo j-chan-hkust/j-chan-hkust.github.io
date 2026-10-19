@@ -30,8 +30,23 @@ Run `npm run build`, then `npm test`. With the dev server running, `npm run test
 
 ## Independent React and static projects
 
+The Neovim cheatsheet lives in `public/projects/neovim-cheatsheet/` and is published at `https://www.jung-chan.com/projects/neovim-cheatsheet/`. Edit its HTML/CSS/JS directly; it needs no separate build.
+
 Build each project independently and copy its compiled output into `public/projects/<name>/`, with `index.html` at that directory's root. Astro copies the files unchanged into `dist/projects/<name>/`. GitHub Pages serves the project at `/projects/<name>/`; the blog does not wrap it, share its styles, or add a navigation link.
+
+For plain HTML/CSS/JS projects, put the files directly in that folder:
+
+```text
+public/projects/my-tool/
+  index.html
+  style.css
+  script.js
+```
+
+Use relative asset paths such as `./style.css` and `./script.js` so they resolve inside the project's directory. The resulting URL is `https://www.jung-chan.com/projects/my-tool/` (include the trailing slash). Link to that URL from any blog post or page when you want readers to discover it.
 
 For a Vite React project, set `base: '/projects/<name>/'` or use suitable relative asset URLs before building. For client-side routes, use `HashRouter`, producing addresses such as `/projects/<name>/#/settings`. Alternatively, emit each route as a static directory containing its own `index.html`. GitHub Pages does not provide SPA rewrite rules.
 
-Use `npm run build` followed by `npm run preview` to test these compiled HTML subtrees, rather than Astro's development page router. Check asset loading and refreshing nested routes before deployment.
+Use `npm run dev` to work on these projects locally. The `static-projects` Vite plugin serves project HTML and directory indexes in development, matching static hosting. Use `npm run build` followed by `npm run preview` to verify the production output. Check asset loading and refreshing nested routes before deployment.
+
+For the cheatsheet, open `http://localhost:4321/projects/neovim-cheatsheet/` in the preview server. Commit the project files and push to `main` when ready to publish; the existing GitHub Pages workflow builds and deploys the blog and all projects together. No separate hosting or DNS change is needed. GitHub Pages serves static files; projects that need a server or database require a separate backend.
