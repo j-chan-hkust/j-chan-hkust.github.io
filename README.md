@@ -1,37 +1,31 @@
-## 🚀 Project Structure
+# Jung Chan
 
-Inside of your Astro project, you'll see the following folders and files:
+A personal blog built with Astro, using the Terminal Paper design: warm off-white, an orange accent, and locally served IBM Plex Mono.
 
-```text
-├── public/
-├── src/
-│   ├── components/
-│   ├── content/
-│   ├── layouts/
-│   └── pages/
-├── astro.config.mjs
-├── README.md
-├── package.json
-└── tsconfig.json
-```
+The homepage lists published posts, with static tag filters. The heart opens **other people's stuff**; the question mark opens **About**. Articles support Markdown/MDX, syntax-highlighted code, images, animated link highlights, and native footnotes with backlinks and target highlighting.
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## Commands
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+| Command | Purpose |
+| --- | --- |
+| `npm install` | Install dependencies |
+| `npm run dev` | Start the site at `localhost:4321` |
+| `npm run build` | Build the static site into `dist/` |
+| `npm run preview` | Serve the production build locally |
+| `npm test` | Check built pages, links, tags, metadata, RSS, and exclusions |
+| `npm run test:e2e` | Review desktop/mobile behavior and capture screenshots |
 
-The `src/content/` directory contains "collections" of related Markdown and MDX documents. Use `getCollection()` to retrieve posts from `src/content/blog/`, and type-check your frontmatter using an optional schema. See [Astro's Content Collections docs](https://docs.astro.build/en/guides/content-collections/) to learn more.
+Run `npm run build` before `npm test`. The browser review needs a running dev server and the Chrome installation used by the existing Puppeteer dependency; it writes screenshots and its report to ignored `artifacts/site/`. Set `SITE_URL` to review a server at another address.
 
-Any static assets, like images, can be placed in the `public/` directory.
+## Content
 
-## 🧞 Commands
+- `src/content/blog/`: published posts with title, description, publication date, and optional tags, updated date, and hero image.
+- `src/content/hidden/`: direct-link posts, excluded from archives, RSS, search indexing, and the sitemap.
+- `src/content/pages/`: the About biography and curated links.
+- `src/content/drafts/`: local working files, ignored by Git and never built or routed.
 
-All commands are run from the root of the project, from a terminal:
+Existing `/blog/<slug>/` and `/hidden/<slug>/` links are preserved. `/blog/` forwards to the homepage. The former `/stuff-i-like/` path forwards to `/other-peoples-stuff/`.
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+The configured domain is `https://www.jung-chan.com`, matching `public/CNAME`. GitHub Pages deployment still uses the existing workflow on pushes to `main`.
+
+See [site maintenance and independent projects](docs/site.md) for publishing content and hosting React/static builds under `/projects/<name>/`.

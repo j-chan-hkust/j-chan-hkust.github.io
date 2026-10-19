@@ -1,0 +1,9 @@
+---
+import PostArchive from '../../components/PostArchive.astro';
+import { getPosts, tagsFor, tagSlug } from '../../lib/posts';
+export async function getStaticPaths() {
+  return tagsFor(await getPosts()).map(tag => ({ params: { tag: tagSlug(tag.key) }, props: { selectedTag: tag.key } }));
+}
+interface Props { selectedTag: string }
+---
+<PostArchive selectedTag={Astro.props.selectedTag} />

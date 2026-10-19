@@ -1,0 +1,14 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import Site from './Site.astro';
+interface Props { entry: CollectionEntry<'pages'> }
+const { entry } = Astro.props;
+---
+<Site title={entry.data.title} description={entry.data.description}>
+  <article class="reading-page">
+    <a class="back-link" href="/">← All writing</a>
+    <header class="reading-heading"><p class="eyebrow">{entry.id === 'about' ? 'BEHIND THE WORDS' : 'THE GOOD PART OF THE INTERNET'}</p><h1>{entry.data.title}</h1></header>
+    <div class="prose"><slot /></div>
+    <div class="reading-end"><span aria-hidden="true">✳</span><a href="/">Back to all writing</a></div>
+  </article>
+</Site>
